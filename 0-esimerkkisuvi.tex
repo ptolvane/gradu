@@ -1,0 +1,123 @@
+\documentclass[12pt, a4paper, titlepage]{article}
+
+%-----kieli-----
+\usepackage[cp1252]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage[T1]{fontenc}
+
+%-----grafiikka-----
+\usepackage[dvips]{graphicx}
+\graphicspath{{kuvat/}}
+ 
+
+%-----fontit-----
+\usepackage[bitstream-charter]{mathdesign}
+%\usepackage{newcent}
+%\usepackage{palatino}
+\usepackage{times}
+%\usepackage{utopia}
+\usepackage{siunitx}
+\usepackage[font={small,it}]{caption}
+
+%-----tablet-----
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{booktabs,threeparttable}
+
+%-----muotoilu-----
+%\linespread{1.3}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\usepackage{lineno}
+\usepackage{setspace}
+
+%-----lisäkomennot-----
+\newcommand{\lyhenne}[1]{\textbf{{#1}}}
+\newcommand{\lyhavaus}[1]{\textit{{#1}}}
+\newcommand{\celsius}{\ensuremath{^\circ}C }
+\newcommand{\celsiusv}{\ensuremath{^\circ}C}
+\newcommand{\mikrometri}{\SI{}{\micro\metre} }
+%\newcommand{\mikrometriv}{\ensuremath{\mu}m}
+\newcommand{\mikrolitra}{\SI{}{\micro\litre }}
+%\newcommand{\mikrolitrav}{\ensuremath{\mu}l}
+\newcommand{\mikromooli}{\SI{}{\micro\mole} }
+%\newcommand{\mikromooliv}{\ensuremath{\mu}M}
+
+%-----kirjallisuusviitteet-----
+\usepackage{natbib}
+%\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+%---------------------------------------------------------------------------------------
+
+\begin{document}
+
+  
+\begin{titlepage}
+\begin{flushleft}
+
+\vspace*{50mm}
+\begin{huge}TrkB-signaloinnin merkitys kehittyvässä hippokampuksessa ja sen hermoverkkojen homeostaattisessa säätelyssä\end{huge}\\
+\vspace*{6mm}
+{\large Suvi Pousi}
+
+\end{flushleft}
+
+\vspace*{60mm}
+\begin{flushright}
+Pro gradu -tutkielma\\
+Helsingin yliopisto\\
+Biotieteiden laitos\\
+Fysiologian ja neurotieteen osasto\\
+Marraskuu 2015
+\end{flushright}
+
+\end{titlepage}
+\clearpage
+
+\tableofcontents
+%\listoftables
+%\listoffigures
+\newpage
+
+\section*{Lyhenteet ja käsitteet}
+\input{suvinlyhenteet.tex}
+\clearpage
+
+\onehalfspacing
+
+\section{Johdanto}
+\input{johdanto.tex}
+
+\clearpage
+
+\section{Työn tarkoitus}
+\input{tyontarkoitus}
+\clearpage
+
+\section{Materiaalit ja menetelmät}
+\input{materiaalimetodi.tex}
+\clearpage
+
+\section{Tulokset}
+\input{tulokset.tex}
+\clearpage
+
+\section{Tulosten tarkastelu}
+\input{tarkastelu.tex}
+\clearpage
+
+\section{Yhteenveto}
+\input{yhteenveto.tex}
+\clearpage
+
+\renewcommand{\refname}{Lähteet}
+\bibliography{graduviitteet}
+\clearpage
+
+\section{Liitteet}
+\input{liitteet.tex}
+\clearpage
+
+\end{document}

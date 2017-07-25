@@ -39,6 +39,8 @@
 \usepackage{microtype}
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+
 
 % Automatically set the PDF metadata fields
 \makeatletter
@@ -50,12 +52,15 @@
 % these should be modified according to your language
 
 % babelbib for non-english bibliography using bibtex
-\usepackage[fixlanguage]{babelbib}
-\iflanguage{finnish}{\selectbiblanguage{finnish}}{}
+%\usepackage[fixlanguage]{babelbib}
+\usepackage{natbib}
+% \iflanguage{finnish}{\selectbiblanguage{finnish}}{}
+ %\iflanguage{english}{\selectbiblanguage{en}}{}
+% \selectbiblanguage{english}
 
 % add bibliography to the table of contents
-\usepackage[nottoc]{tocbibind}
-\iflanguage{finnish}{\settocbibname{Lähteet}}{}
+  \usepackage[nottoc]{tocbibind}
+  \iflanguage{finnish}{\settocbibname{Lähteet}}{}
 
 % --- Theorem environment definitions ---
 
@@ -74,15 +79,19 @@
 % The following commands define the information used to generate title and
 % abstract pages. The following entries should be always specified:
 
-\title{Sample Title}
-\author{John Doe}
+\title{The Planning Problem in Philosophy and Artificial Intelligence}
+\author{Pekka Tolvanen}
 \date{\today}
-\level{Seminar report}
-\abstract{Abstract.}
+\level{Master's Thesis}
+\abstract{This thesis concerns philosophy of action and attempts to incorporate a bit of philosophical insight into certain types of software models. Multi-agent systems are used especially in engineering sciences and technology to model the interaction of intelligent agents. They are mostly based on game theoretical frameworks, which are known to be rather limited in their ability to model human interaction. Foundations of social action and cooperation, however, are widely discussed in the philosophy of action and social ontology. How can philosophy then inform multi-agent systems? This thesis explores the question by showing how theories of social action, such as team reasoning, can be applied to multi-agent systems.
+
+I will introduce Michael Bratman's theory of human practical reasoning — the belief-desire-intention framework or BDI for short — and discuss it's applications in software modeling. The BDI framework can be used to model not just single agents, but also multi-agent systems that involve communication and interaction. I will also introduce Raimo Tuomela's account of we-intentions and team reasoning and discuss their possible applications in multi-agent planning as suggested by Raul Hakli. The standard approach to multi-agent modeling begins from the point of view of the individual and builds social action by making the atomistic agents interact together. Planning in the we-mode, however, would enable the agents to begin their planning from the intentions of the group and thus ease the model-building process by reducing the need for communication and improving the ability of human agents and robots to coordinate their actions together.
+
+I will evaluate the benefits and limitations of applying theories of specifically human action to non-human agents. Some of the systems that utilize non-human agents — such as computer programs and robots — aim to represent the action and interaction of real human agents, many interact with people and/or are humanized by people, while others have little or no contact with people. The variety of ways in which multi-agent systems can relate to real people indicates that the usefulness of incorporating elements of human interaction into artificial systems depends on the context of the system in question.}
 
 % The following can be used to specify keywords and classification of the paper:
 
-\keywords{keyword 1, keyword 2, keyword 3}
+\keywords{philosophy of science, social ontology, philosophy of action, multi-agent systems}
 
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
@@ -98,9 +107,9 @@
 % If you are not a computer scientist, you will want to uncomment the following by hand and specify
 % your department, faculty and subject by hand:
 %
-% \faculty{Faculty of Science}
-% \department{Department of Computer Science}
-% \subject{Computer Science}
+\faculty{Faculty of Social Science}
+\department{Department of Political and Economic Studies}
+\subject{Social and Moral Philosophy}
 %
 % If you are not from the University of Helsinki, then you will most likely want to set these also:
 %
@@ -125,17 +134,24 @@
 
 \mainmatter       % clear page, start arabic page numbering
 
-\section{Example section}
-
 % Write some science here.
+\input{1-abbreviations}
+\clearpage
+\input{2-introduction}
+\clearpage
+\input{3-literature}
+\clearpage
+\input{4-discussion}
+\clearpage
+\input{5-conclusions}
+\clearpage
 
-Sample text and a reference~\cite{example}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at lorem varius, sodales diam semper, congue dui. Integer porttitor felis eu tempor tempor. Proin molestie maximus augue in facilisis. Phasellus eros dui, blandit eu nibh ut, pharetra porta enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam ullamcorper risus pretium est elementum, eget egestas lorem fermentum. Etiam auctor nisi purus, vitae scelerisque augue vehicula sed. Ut eu laoreet ex. Mauris eu mi a tortor gravida cursus eget sit amet ligula.
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{frog}
-\caption{Caption for the image.}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=\textwidth]{frog}
+%\caption{Caption for the image.}
+%\end{figure}
 
 % --- References ---
 %
@@ -147,8 +163,14 @@ Sample text and a reference~\cite{example}. Lorem ipsum dolor sit amet, consecte
 %
 % instead.
 
-\bibliographystyle{babplain-lf}
-\bibliography{references}
+\clearpage
+
+%\bibliographystyle{babplain-lf}
+
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{;}{a}{,}{,}
+ \bibliography{Zotero.bib}
+
 
 
 % --- Appendices ---
